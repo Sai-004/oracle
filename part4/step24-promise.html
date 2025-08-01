@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*   
+          Promise.resolve(function(){
+           // it will always resolve
+          })
+          Promise.reject(function(){
+           // it will always reject
+          }) 
+           */
+        let FirstPromise = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                if (false) {
+                    resolve("Sucess Data from promise");
+                } else {
+                    reject("Error Data from Promise")
+                }
+            }, 4000)
+        });
+
+        FirstPromise.then(
+            function(data){
+                console.log("Success", data)
+            }
+        ).catch(
+            function(err){
+                console.log("Error ", err)
+            }
+        ).finally(
+            function(){
+                console.log("promise is now complete")
+            }
+        )
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

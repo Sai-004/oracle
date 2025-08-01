@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // class & module
+
+        // public property
+        // public method
+
+        // private property
+        // private method
+        // getters & setters
+
+        // static property
+        // static method
+        
+        // constructor
+        // inheritance / super
+        class Person{
+            ability = "default";
+            constructor(pability){
+                this.ability = pability
+            }
+            canwalk(){
+                return this.ability;
+            }
+        };
+        
+        class Hero extends Person{
+            // public
+            title = "";
+            power = 0;
+            static version = 1001;
+            #secret = "work on my Secret Mission";
+            constructor(htitle,hpower, hability){
+                super(hability)
+                this.title = htitle;
+                this.power = hpower;
+            }
+            saymessage(){
+                return "Hello from "+this.title+" : I will "+this.#secret;
+            }
+            static sayversion(){
+                return this.version+" is the current version"
+            }
+            get secret(){
+                return this.#secret
+            }
+            set secret(nmessage){
+                this.#secret = nmessage
+            }
+        };
+
+        let hero = new Hero("Batman",6,"I can fly");
+        console.log(hero.title);
+        console.log(hero.saymessage());
+        console.log(hero.secret)
+        hero.secret = "Save the world"
+        console.log(hero.secret)
+        console.log(hero.canwalk())
+        console.log(Hero.version)
+        console.log(Hero.sayversion())
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
