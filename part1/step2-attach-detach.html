@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
+        .container {
+            width: 1116px;
+            height: 600px;
             background-color: silver;
             border: 1px solid darkslategrey;
-            height: 600px;
-            width: 1116px;
             margin: auto;
             overflow: auto;
         }
-        .box{
-            background-color: darkorange;
-            height: 100px;
+
+        .box {
             width: 100px;
-            float: left;
+            height: 100px;
+            background-color: darkorange;
             margin: 5px;
+            float: left;
         }
     </style>
     <script>
-        function addBoxHandler(){
-            document.getElementsByClassName("container")[0].innerHTML += "<div class='box'></div>";
-        };
-        function removeAddBoxHandler(){
-            // alert(" 'Stop Adding Box' was clicked ");
+        function addBoxHandler() {
+            document.getElementsByClassName("container")[0].innerHTML += '<div class="box"></div>';
+        }
+        function stopAddingHandler() {
             document.getElementsByTagName("button")[0].removeEventListener("click", addBoxHandler);
-        };
-        function init(){
+        }
+        function init() {
             document.getElementsByTagName("button")[0].addEventListener("click", addBoxHandler);
-            document.getElementsByTagName("button")[1].addEventListener("click", removeAddBoxHandler);
-        };
-        document.addEventListener("DOMContentLoaded", init);
+            document.getElementsByTagName("button")[1].addEventListener("click", stopAddingHandler);
+        }
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </head>
+
 <body>
-    <button>Add Box</button>
-    <button>Stop Adding Box</button>
+    <button id="addBox">Add Box</button>
+    <button id="removeBox">Remove Adding Box</button>
+
     <hr>
-    <div class="container"></div>
+
+    <div class="container">
+    </div>
+
 </body>
+
 </html>

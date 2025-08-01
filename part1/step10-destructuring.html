@@ -1,72 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destructuring</title>
     <script>
         var hero = {
-            title : "Ironman",
-            power : 7,
-            firstname : "Tony",
-            lastname : "Stark",
-            city : "New York"
+            title: "Ironman",
+            power: 100,
+            city: "New York",
+            firstName: "Tony",
+            lastName: "Stark",
         };
 
-       /*  
-       var temphero = hero;
-        console.log("Hero's Title", hero.title);
-        console.log("Temp Hero's Title", temphero.title);
-        
+        var temphero = hero;
+        console.log("hero's title:", hero.title);
+        console.log("temphero's title:", temphero.title);
+
+        // Shallow copy - reference type
         temphero.title = "Iron Monger";
 
-        console.log("Temp Hero's Title", temphero.title);// ??? 
-        console.log("Hero's Title", hero.title);// ???  
-        // 
-        */
+        console.log("hero's title after change:", hero.title);
+        console.log("temphero's title after change:", temphero.title);
 
-        /* 
-        var herotitle = hero.title;
-        var heropower = hero.power;
-        var herofirstname = hero.firstname;
-        var herolastname = hero.lastname;
-        var herocity = hero.city;
+        var { title, power, city, firstName, lastName } = hero;
 
-        var herotitle = hero.title,
-        heropower = hero.power,
-        herofirstname = hero.firstname,
-        herolastname = hero.lastname,
-        herocity = hero.city;
-        */
-        /* 
-        object destructuring
-        */
-        let { 
-            title : herotitle , 
-            power : heropower , 
-            firstname : herofirstname,
-            lastname : herolastname,
-            city : herocity 
-        } = hero;
+        // Destructuring
+        hero.title = "Iron Man";
 
-        console.log("Hero's Title", hero.title);
-        console.log("Temp Hero's Title", herotitle);
-        
-        herotitle = "Iron Monger";
-
-        console.log("Temp Hero's Title", herotitle);// ??? 
-        console.log("Hero's Title", hero.title);// ???  
-
-        /* 
-        array destructuring
-        */
-       let avengers = ["Ironman","Thor", "Hulk","Spiderman"];
-       let [firsthero, secondhero, thirdhero, fourthhero]  = avengers;
-       console.log(firsthero);
-       console.log(fourthhero);
+        console.log("hero's title after change:", hero.title);
+        console.log("destructured hero's title after change:", title);
     </script>
 </head>
+
 <body>
-    
 </body>
+
 </html>

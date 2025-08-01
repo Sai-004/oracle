@@ -16,9 +16,16 @@
                     return (scope.costPrice * scope.calculateProfit()) / 100;
                 }
                 return addprofit(this) + this.costPrice;
+
+                // var addprofit = function(){
+                //     return (this.costPrice * this.calculateProfit()) / 100;
+                // }
+                // return addprofit.call(this) + this.costPrice;
+                // return addprofit.apply(this) + this.costPrice;
+                // return addprofit.bind(this)() + this.costPrice;
             },
         };
-
+ 
         console.log(cart.getSellingPrice())// 120 */
         var hero = {
             title : "Ironman"
@@ -27,7 +34,7 @@
             return 50
         }
         var costPrice = 1000;
-
+ 
         var cart = {
             title : "My Cart",
             costPrice : 100,
@@ -37,13 +44,11 @@
                    console.log(this.hero.title)
                    return  (this.costPrice * this.calculateProfit()) / 100;
                 }
-                // return addprofit.call(this) + this.costPrice;
-                // return addprofit.apply(this) + this.costPrice;
-                // return addprofit.bind(this)() + this.costPrice;
+                
                 return addprofit() + this.costPrice;
             },
         };
-
+ 
         console.log(cart.getSellingPrice())// 120
     </script>
 </head>

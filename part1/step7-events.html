@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Events</title>
     <script>
-        function clickHandler(event){
-            console.log("you ", event.type, " on the ", event.target.innerText, "button");
-        };
-        function init(){
-            for(var i = 0; i < document.getElementsByTagName("button").length; i++){
-                document.getElementsByTagName("button")[i].addEventListener("click", clickHandler);
-                document.getElementsByTagName("button")[i].addEventListener("mouseup", clickHandler);
-                document.getElementsByTagName("button")[i].addEventListener("mouseover", clickHandler);
-                document.getElementsByTagName("button")[i].addEventListener("mouseout", clickHandler);
-                document.getElementsByTagName("button")[i].addEventListener("mousedown", clickHandler);
+        function clickHandler(event) {
+            console.log("Button clicked:", event.target.innerText, "; Event type:", event.type);
+        }
+        function init() {
+            for (let i = 0; i < document.getElementsByTagName('button').length; i++) {
+                document.getElementsByTagName('button')[i].addEventListener('click', clickHandler)
+                document.getElementsByTagName('button')[i].addEventListener('mouseover', clickHandler);
+                document.getElementsByTagName('button')[i].addEventListener('mouseout', clickHandler);
+                document.getElementsByTagName('button')[i].addEventListener('mousedown', clickHandler);
+                document.getElementsByTagName('button')[i].addEventListener('mouseup', clickHandler);
             }
-        };
-        document.addEventListener("DOMContentLoaded", init);
+        }
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </head>
+
 <body>
     <button>First</button>
     <button>Second</button>
     <button>Third</button>
     <button>Fourth</button>
 </body>
+
 </html>
