@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: silver;
+            border: 1px solid darkslategrey;
+            height: 600px;
+            width: 1116px;
+            margin: auto;
+            overflow: auto;
+        }
+        .container div{
+            font-family: sans-serif;
+            font-size: 36px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .box{
+            background-color: darkorange;
+            height: 100px;
+            width: 100px;
+            float: left;
+            margin: 5px;
+        }
+        .brdr{
+           border: 5px dashed red ;
+        }
+        .wbox{
+            background-color: rgb(8, 152, 159);
+            height: 100px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        /* READ CREATE UPDATE DELETE */
+        var count = 1;
+        function addBoxHandler(){
+           var box = document.createElement("div");
+           box.setAttribute("class","box");
+           box.textContent = count;
+           document.getElementsByClassName("container")[0].appendChild(box);
+           count++;
+        };
+        function removeAddBoxHandler(){
+            // alert(" 'Stop Adding Box' was clicked ");
+            document.getElementsByTagName("button")[0].removeEventListener("click", addBoxHandler);
+        };
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", addBoxHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click", removeAddBoxHandler);
+            document.getElementsByTagName("button")[2].addEventListener("click", function(){
+               // console.log("you clicked the set me blue button")
+               for(var i = 0; i < document.querySelector(".container").children.length; i++){
+                    // console.log("box found");
+                    document.querySelector(".container").children[i].setAttribute("class","wbox brdr");
+                }
+            });
+        };
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Stop Adding Box</button>
+    <button>Set me Blue</button>
+    <hr>
+    <div class="container"></div>
+</body>
+</html>

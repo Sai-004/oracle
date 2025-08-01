@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*         var cart = {
+            title : "My Cart",
+            costPrice : 100,
+            calculateProfit : function(){
+                return 20
+            },
+            getSellingPrice : function(){
+                var addprofit = function(scope){
+                    return (scope.costPrice * scope.calculateProfit()) / 100;
+                }
+                return addprofit(this) + this.costPrice;
+            },
+        };
+
+        console.log(cart.getSellingPrice())// 120 */
+        var hero = {
+            title : "Ironman"
+        }
+        var calculateProfit = function(){
+            return 50
+        }
+        var costPrice = 1000;
+
+        var cart = {
+            title : "My Cart",
+            costPrice : 100,
+            calculateProfit : () =>  20,
+            getSellingPrice : () => {
+                var addprofit = () =>  {
+                   console.log(this.hero.title)
+                   return  (this.costPrice * this.calculateProfit()) / 100;
+                }
+                // return addprofit.call(this) + this.costPrice;
+                // return addprofit.apply(this) + this.costPrice;
+                // return addprofit.bind(this)() + this.costPrice;
+                return addprofit() + this.costPrice;
+            },
+        };
+
+        console.log(cart.getSellingPrice())// 120
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

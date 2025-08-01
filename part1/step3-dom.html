@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .redbox{
+            background-color: crimson;
+            color: papayawhip;
+            font-family: sans-serif;
+        }
+        .bluebox{
+            background-color: darkblue;
+            color: skyblue;
+            font-family: sans-serif;
+        }
+    </style>
+    <script>
+        function init(){
+           // console.log(document.body.childNodes);
+           // console.log(document.body.firstChild);
+           // console.log(document.getElementsByTagName("h3")[0].textContent)
+           // console.log(document.body.firstChild.textContent)
+          // console.log(document.querySelector("h1").textContent)
+          // console.log(document.querySelectorAll("h1")[1].textContent)
+          // console.log(document.querySelector("article").textContent);
+          // console.log(document.body.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.textContent);
+          //  console.log(document.body.childNodes);// 11
+          //  console.log(document.body.children);// 5
+          //  console.log(document.body.children[3].tagName);//  
+          // console.log(document.body.children[4].children[0].textContent);// ???
+          // document.body.children[4].children[0].setAttribute("class","redbox");
+          document.getElementsByTagName("button")[0].addEventListener("click", function(){
+           document.body.children[6].children[0].setAttribute("class","redbox");
+          })
+          document.getElementsByTagName("button")[1].addEventListener("click", function(){
+           document.body.children[6].children[0].setAttribute("class","bluebox");
+          })
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <button>RED</button>
+    <button>BLUE</button>
+    <h1> Welcome to your life 1 </h1>
+    <h2> Welcome to your life 2 </h2>
+    <h3> Welcome to your life 3 </h3>
+    <h4> Welcome to your life 4 </h4>
+    <section>
+        <article>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet laborum reiciendis, maiores, assumenda autem rem consequatur facere similique veritatis nisi magnam tempora dolor aliquid ab?
+        </article>
+    </section>
+</body>
+</html>

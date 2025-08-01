@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Delete</title>
+    <style>
+        .container{
+            background-color: silver;
+            border: 1px solid darkslategrey;
+            height: 600px;
+            width: 1116px;
+            margin: auto;
+            overflow: auto;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            float: left;
+            margin: 5px;
+            font-family: sans-serif;
+            font-size: 36px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .box:hover{
+            box-shadow: 5px 5px 10px black;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var container = null; // undefined
+        var count = 1;
+        function removeBox(event){
+            // container.removeChild(ctx);
+            // console.log("you clicked on the container");
+            // console.log(event.target.innerText);
+            if(event.target.className === "container"){
+                alert("select a box to remove")
+            }else{
+                container.removeChild(event.target);
+            }
+        };
+        function init(){
+            container = document.getElementsByClassName("container")[0];
+            container.addEventListener("click", removeBox);
+            for(var i = 0; i < 100; i++){
+                var r = Math.round(Math.random() * 255);
+                var g = Math.round(Math.random() * 255);
+                var b = Math.round(Math.random() * 255);
+                // container.innerHTML += "<div style='background-color: rgba("+r+","+g+","+b+",1) ' class='box'>"+count+"</div>";
+                container.innerHTML += `<div style="background-color: rgba(${r},${g},${b},1)" class='box'> ${count} </div>`;
+                count++;
+            }
+        };
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>
+
+<!-- 
+https://p.ip.fi/LqXT
+-->

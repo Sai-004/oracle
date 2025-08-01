@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <script>
+        let favnums = [22,73,49,99,36,41,55,78,7];
+        // double this array;
+        /* 
+        let doubleFavNum = [];
+        for(let i = 0; i < favnums.length; i++){
+            doubleFavNum.push(favnums[i]*2)
+        };
+        console.log(favnums);
+        console.log(doubleFavNum); 
+        */
+        // array methods
+        /* let doubleFavNum = [];
+        // favnums.forEach(function(val){
+        //     doubleFavNum.push(val*2)
+        // });
+        favnums.forEach( val => {
+            doubleFavNum.push(val*2)
+        });
+        console.log(favnums);
+        console.log(doubleFavNum);  */
+        let doubleFavNum = favnums.map(val => val * 2);
+        console.log(favnums);
+        console.log(doubleFavNum); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

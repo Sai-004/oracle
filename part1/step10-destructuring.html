@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        var hero = {
+            title : "Ironman",
+            power : 7,
+            firstname : "Tony",
+            lastname : "Stark",
+            city : "New York"
+        };
+
+       /*  
+       var temphero = hero;
+        console.log("Hero's Title", hero.title);
+        console.log("Temp Hero's Title", temphero.title);
+        
+        temphero.title = "Iron Monger";
+
+        console.log("Temp Hero's Title", temphero.title);// ??? 
+        console.log("Hero's Title", hero.title);// ???  
+        // 
+        */
+
+        /* 
+        var herotitle = hero.title;
+        var heropower = hero.power;
+        var herofirstname = hero.firstname;
+        var herolastname = hero.lastname;
+        var herocity = hero.city;
+
+        var herotitle = hero.title,
+        heropower = hero.power,
+        herofirstname = hero.firstname,
+        herolastname = hero.lastname,
+        herocity = hero.city;
+        */
+        /* 
+        object destructuring
+        */
+        let { 
+            title : herotitle , 
+            power : heropower , 
+            firstname : herofirstname,
+            lastname : herolastname,
+            city : herocity 
+        } = hero;
+
+        console.log("Hero's Title", hero.title);
+        console.log("Temp Hero's Title", herotitle);
+        
+        herotitle = "Iron Monger";
+
+        console.log("Temp Hero's Title", herotitle);// ??? 
+        console.log("Hero's Title", hero.title);// ???  
+
+        /* 
+        array destructuring
+        */
+       let avengers = ["Ironman","Thor", "Hulk","Spiderman"];
+       let [firsthero, secondhero, thirdhero, fourthhero]  = avengers;
+       console.log(firsthero);
+       console.log(fourthhero);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

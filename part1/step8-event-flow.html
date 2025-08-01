@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 900px;
+            height: 450px;
+            background-color: rgb(50, 60, 60);
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .childcontainer{
+            width: 450px;
+            height: 250px;
+            background-color: rgb(91, 160, 160);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .button{
+            width: 150px;
+            height: 50px;
+            background-color: rgb(132, 198, 198);
+            color: rgb(25, 42, 42);
+            text-align: center;
+            line-height: 50px;
+            font-family: sans-serif;
+        }
+    </style>
+    <script>
+        function containerClickHandler(event){
+            console.log("you clicked", event.currentTarget.className, event.eventPhase);
+        };
+        function childContainerClickHandler(event){
+            console.log("you clicked", event.currentTarget.className, event.eventPhase);
+        };
+        function buttonClickHandler(event){
+            console.log("you clicked", event.currentTarget.className, event.eventPhase);
+        };
+        function init(){
+            document.getElementsByClassName("container")[0].addEventListener("click", containerClickHandler)
+            document.getElementsByClassName("childcontainer")[0].addEventListener("click", childContainerClickHandler)
+            document.getElementsByClassName("button")[0].addEventListener("click", buttonClickHandler)
+            // 
+            document.getElementsByClassName("container")[0].addEventListener("click", containerClickHandler, true)
+            document.getElementsByClassName("childcontainer")[0].addEventListener("click", childContainerClickHandler, true)
+            document.getElementsByClassName("button")[0].addEventListener("click", buttonClickHandler, true)
+        };
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="childcontainer">
+            <div class="button">Click Me</div>
+        </div>
+    </div>
+</body>
+</html>

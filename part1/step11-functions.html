@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: crimson;
+            height: 50px;
+        }
+    </style>
+    <script>
+        // default parameters
+        /* 
+        function adder(num1 = 0, num2 = 0){
+            return num1 + num2; 
+        };
+        console.log(adder(8));
+        function init(){
+            document.getElementsByClassName("box")[0].setAttribute("style","width : "+adder(8) * 10+"px");
+        };
+        document.addEventListener("DOMContentLoaded", init);  
+        */
+        // 
+        // REST
+        /* 
+        function adder(...nums){
+            let total = 0;
+            for(let i = 0; i < nums.length; i++){
+                total += nums[i]
+            };
+            return total;
+        };
+        console.log(adder(5));// NaN
+        console.log(adder(5,6));// 11
+        console.log(adder(5,6,7));// 
+        console.log(adder(5,6,7,8));// 
+        console.log(adder(5,6,7,8,9));// 
+        console.log(adder(5,6,7,8,9,10));// 
+        */
+        function adder(...nums){
+            let total = 0;
+            for(let i = 0; i < nums.length; i++){
+                total += nums[i]
+            };
+            return total;
+        };
+        let favnums = [5,6,7,8,9,10];
+        // console.log(adder(favnums[0],favnums[1],favnums[2],favnums[3]));
+        // SPREAD SYNTAX
+        console.log(adder(...favnums));
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
