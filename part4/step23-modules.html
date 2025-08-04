@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import { Hero } from "./module/hero.js"
+        let hero = new Hero("Batman",6,"I can fly");
+        console.log(hero.title);
+        console.log(hero.saymessage());
+        console.log(hero.secret);
+        hero.secret = "Save the world";
+        console.log(hero.secret);
+        console.log(hero.canwalk());
+        console.log(Hero.version);
+        console.log(Hero.sayversion());
+
+        /* 
+        cors
+        crossdomain.xml
+        jsonp
+        xmlp 
+        */
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
